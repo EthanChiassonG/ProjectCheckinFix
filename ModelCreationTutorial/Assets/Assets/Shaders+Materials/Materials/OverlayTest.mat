@@ -83,7 +83,7 @@ Material:
     - _TileY: 2
     - _ZWrite: 0
     m_Colors:
-    - _AmbientColor: {r: 0.9528302, g: 0.8183999, b: 0.6427109, a: 1}
+    - _AmbientColor: {r: 0.754717, g: 0.37469548, b: 0.10323961, a: 1}
     - _BaseSpeed: {r: 0.1, g: 0, b: 0, a: 0}
     - _BaseTiling: {r: 12, g: 12, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

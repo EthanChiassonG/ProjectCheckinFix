@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +28,7 @@ public class KinematicPlayerController : MonoBehaviour
     [Header("Health Settings")]
     public int maxHealth = 5;
     public int currentHealth;
+    private float MaxFreeTime;
 
     [Header("Death Settings")]
     public GameObject deathImage;
@@ -184,7 +186,6 @@ public class KinematicPlayerController : MonoBehaviour
     private void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
         if (currentHealth <= 0)
         {
             Die();

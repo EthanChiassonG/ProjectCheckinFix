@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - EnemyAttack
+  - Mistake
   layers:
   - Default
   - TransparentFX

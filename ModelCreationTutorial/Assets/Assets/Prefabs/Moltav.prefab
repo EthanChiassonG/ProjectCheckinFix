@@ -64,6 +64,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d7b8aac06524c914c8ba0e3bd5c459cb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d7b8aac06524c914c8ba0e3bd5c459cb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a4bfd88d8c9f36a46afbfc73d3fa8a40, type: 2}
+    - target: {fileID: -7511558181221131132, guid: d7b8aac06524c914c8ba0e3bd5c459cb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b74da9d044a98f34aa04d4c968443fd9, type: 2}
     - target: {fileID: 919132149155446097, guid: d7b8aac06524c914c8ba0e3bd5c459cb, type: 3}
       propertyPath: m_Name
       value: Moltav
@@ -84,7 +96,7 @@ PrefabInstance:
       addedObject: {fileID: 757846508770336385}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7b8aac06524c914c8ba0e3bd5c459cb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -364591085072021059}
+      addedObject: {fileID: 3669934797528577296}
   m_SourcePrefab: {fileID: 100100000, guid: d7b8aac06524c914c8ba0e3bd5c459cb, type: 3}
 --- !u!1 &8800285293892786293 stripped
 GameObject:
@@ -141,7 +153,7 @@ CapsuleCollider:
   m_Height: 0.036
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: -0.0077958913}
---- !u!114 &-364591085072021059
+--- !u!114 &3669934797528577296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,5 +164,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80136df92b197874abf66318c9e2e9bb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  m_EditorClassIdentifier: Assembly-CSharp::Mltov
   objectToSpawn: {fileID: 4513150380327864942, guid: 48364c4461c304e4b936c1b348c20e1f, type: 3}
+  groundLayerName: Ground Layer

@@ -6,17 +6,20 @@ public class EnemyBoss : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public GameObject projectilePrefab;
+    public GameObject mistakePrefab;
     public GameObject forwardProjectilePrefab;
     public Transform player;
     public Transform projectileSpawnPoint;
     public Transform forwardSpawnPoint;
     public float dropAttackInterval = 3f;
     public float forwardAttackInterval = 5f;
+    public float MistakeAttackInterval = 8f;
     public GameObject VictoryText;
-    public GameObject ColorCorrector;
+
 
     private float dropAttackTimer;
     private float forwardAttackTimer;
+    public float MistakeAttackTimer;
 
     private void Start()
     {
@@ -49,6 +52,12 @@ public class EnemyBoss : MonoBehaviour
             ForwardAttack();
             forwardAttackTimer = 0f;
         }
+        MistakeAttackTimer += Time.deltaTime;
+        if (MistakeAttackTimer >= MistakeAttackInterval)
+        {
+            MistakeAttack();
+            MistakeAttackTimer = 0f;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -56,6 +65,11 @@ public class EnemyBoss : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             TakeDamage(1);
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Mistake"))
+        {
+            TakeDamage(5);
             Destroy(collision.gameObject);
         }
     }
@@ -77,10 +91,6 @@ public class EnemyBoss : MonoBehaviour
         if (VictoryText != null)
         {
             VictoryText.SetActive(true);
-        }
-        if (ColorCorrector != null)
-        {
-            ColorCorrector.SetActive(true);
         }
     }
 
@@ -120,6 +130,16 @@ public class EnemyBoss : MonoBehaviour
         if (forwardSpawnPoint != null)
         {
             Instantiate(forwardProjectilePrefab, forwardSpawnPoint.position, Quaternion.identity);
+        }
+    }
+
+    private void MistakeAttack()
+    {
+        if (player != null && forwardSpawnPoint != null)
+        {
+            Vector3 spawnPosition = new Vector3(player.position.x, player.position.y + 30f, player.position.z);
+            projectileSpawnPoint.position = spawnPosition;
+            GameObject projectile = Instantiate(mistakePrefab, projectileSpawnPoint.position, Quaternion.identity);
         }
     }
 }
